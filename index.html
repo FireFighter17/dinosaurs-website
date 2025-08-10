@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dinosaurs — Explore Prehistoric Giants</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>🦖 Dinosaurs — Explore the Prehistoric World</h1>
+      <nav>
+        <a href="#overview">Overview</a>
+        <a href="#timeline">Timeline</a>
+        <a href="#types">Types</a>
+        <a href="#facts">Fun Facts</a>
+        <a href="#quiz">Quiz</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="overview" class="card">
+      <h2>What were dinosaurs?</h2>
+      <p>Dinosaurs were a diverse group of reptiles that lived during the Mesozoic Era — roughly <strong>252 to 66 million years ago</strong>. The Mesozoic is traditionally divided into three periods:</p>
+      <ul>
+        <li><strong>Triassic</strong> — 252–201 million years ago (Ma)</li>
+        <li><strong>Jurassic</strong> — 201–145 Ma</li>
+        <li><strong>Cretaceous</strong> — 145–66 Ma</li>
+      </ul>
+      <p>They included small feathered species and massive long-necked giants. Birds are modern descendants of one group of theropod dinosaurs.</p>
+    </section>
+
+    <section id="timeline" class="card">
+      <h2>Mesozoic Timeline (quick)</h2>
+      <div class="grid">
+        <div class="era">
+          <h3>Triassic (252–201 Ma)</h3>
+          <p>Dinosaurs first appear; ecosystems recover after the Permian extinction.</p>
+        </div>
+        <div class="era">
+          <h3>Jurassic (201–145 Ma)</h3>
+          <p>Large dinosaurs like sauropods and many theropods diversify; first birds appear.</p>
+        </div>
+        <div class="era">
+          <h3>Cretaceous (145–66 Ma)</h3>
+          <p>Flowering plants spread; iconic species such as <em>Tyrannosaurus</em> and <em>Triceratops</em> lived then. Ended with a mass extinction.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="types" class="card">
+      <h2>Main dinosaur groups</h2>
+      <div class="grid species-grid">
+        <article class="species-card">
+          <h4>Theropods</h4>
+          <p>Mostly bipedal carnivores — e.g., <em>Tyrannosaurus</em>, <em>Velociraptor</em>. Birds evolved from small theropods.</p>
+        </article>
+        <article class="species-card">
+          <h4>Sauropods</h4>
+          <p>Giant long-necked herbivores — e.g., <em>Brachiosaurus</em>, <em>Apatosaurus</em>.</p>
+        </article>
+        <article class="species-card">
+          <h4>Ornithischians</h4>
+          <p>Herbivores with diverse armor and horns — e.g., <em>Triceratops</em>, <em>Stegosaurus</em>.</p>
+        </article>
+      </div>
+
+      <label for="search">Search species:</label>
+      <input id="search" placeholder="type name (e.g., T. rex)" />
+
+      <div id="gallery" class="grid species-grid">
+        <div class="species-card" data-name="tyrannosaurus rex">
+          <h4>Tyrannosaurus rex</h4>
+          <p>One of the largest theropods; lived late Cretaceous (~68–66 Ma).</p>
+        </div>
+        <div class="species-card" data-name="triceratops">
+          <h4>Triceratops</h4>
+          <p>Large horned ornithischian from the late Cretaceous.</p>
+        </div>
+        <div class="species-card" data-name="velociraptor">
+          <h4>Velociraptor</h4>
+          <p>Small, feathered predator from the late Cretaceous (Mongolia).</p>
+        </div>
+        <div class="species-card" data-name="brachiosaurus">
+          <h4>Brachiosaurus</h4>
+          <p>Large sauropod notable for its long forelimbs and tall neck.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="facts" class="card">
+      <h2>Fun facts</h2>
+      <ul>
+        <li>Some dinosaurs had feathers — not all were scaly.</li>
+        <li>Birds are technically modern dinosaurs.</li>
+        <li>Fossils form when organic material is replaced by minerals over long periods.</li>
+        <li>The asteroid impact at ~66 Ma at Chicxulub (Yucatán) is the leading explanation for the mass extinction.</li>
+      </ul>
+    </section>
+
+    <section id="quiz" class="card">
+      <h2>Quick quiz</h2>
+      <form id="quizForm">
+        <ol>
+          <li>
+            <p>Which period came first?</p>
+            <label><input type="radio" name="q1" value="Triassic"> Triassic</label><br>
+            <label><input type="radio" name="q1" value="Jurassic"> Jurassic</label><br>
+            <label><input type="radio" name="q1" value="Cretaceous"> Cretaceous</label>
+          </li>
+          <li>
+            <p>Which group includes T. rex?</p>
+            <label><input type="radio" name="q2" value="Theropod"> Theropod</label><br>
+            <label><input type="radio" name="q2" value="Sauropod"> Sauropod</label><br>
+            <label><input type="radio" name="q2" value="Ornithischian"> Ornithischian</label>
+          </li>
+          <li>
+            <p>True or false: Birds descended from dinosaurs.</p>
+            <label><input type="radio" name="q3" value="true"> True</label><br>
+            <label><input type="radio" name="q3" value="false"> False</label>
+          </li>
+        </ol>
+        <button type="button" id="check">Check answers</button>
+      </form>
+      <p id="score"></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Made with 🦕 • Learn more at your local library or trusted science sites.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
