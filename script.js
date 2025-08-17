@@ -1,3 +1,4 @@
+
 // script.js - search + quiz
 document.addEventListener('DOMContentLoaded',function(){
   const search = document.getElementById('search');
@@ -27,3 +28,4 @@ document.addEventListener('DOMContentLoaded',function(){
     });
   }
 });
+
