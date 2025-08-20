@@ -27,16 +27,96 @@ body {
 .card{background:#fff;padding:1rem;margin:1rem 0;border-radius:12px;box-shadow:0 6px 18px rgba(18,44,34,.06)}
 .grid{display:grid;gap:1rem}
 .era{background:linear-gradient(180deg,#fff,#f6fff6);padding:.75rem;border-radius:8px}
-.species-grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.species-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+ 
+}
+.species-card h4 {
+  min-height: 2.5rem;   /* reserve same space for all names */
+  margin: 0 0 0.5rem;   /* spacing below the name */
+  text-align: center;   /* optional: center the text */
+}
+
+
+.type-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  color: white;               /* text stays visible */
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;  /* text at the bottom */
+  padding: 1rem;
+  background-size: cover;
+  background-position: center;
+}
+/* Card base (works for both types and species) */
+.type-card,
 .species-card {
   position: relative;
   border-radius: 12px;
   overflow: hidden;
-  color: white; /* text visible on dark photo */
+  color: white; /* better on images */
   min-height: 180px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; /* text goes to bottom */
+  justify-content: center;  /* put text in the middle */
+  align-items: center;      /* center text horizontally */
+  text-align: center;       /* center text lines */
+  padding: 1rem;
+  background-size: cover;
+  background-position: center;
+}
+
+
+/* Dark overlay for readability */
+.type-card::before,
+.species-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+}
+.type-card * ,
+.species-card * {
+  position: relative;
+  color: #fff; /* text on top of the overlay */
+}
+
+/* Specific backgrounds for the three types */
+.type-card.theropods {
+  background-image: url('theropods.jpg');  /* make sure the file exists */
+}
+.type-card.sauropods {
+  background-image: url('sauropods.jfif');  /* was .jfif; use the real extension you have */
+}
+.type-card.ornithischians {
+  background-image: url('ornithischians.jpg');
+}
+
+/* Specific backgrounds */
+
+.type-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4); /* semi-transparent black */
+}
+.type-card * {
+  position: relative; /* keeps text above overlay */
+}
+
+
+.species-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
   padding: 1rem;
   background-size: cover;
   background-position: center;
@@ -55,58 +135,40 @@ body {
 .species-card[data-name="brachiosaurus"] {
   background-image: url('brachiosaurus.png');
 }
-
 .species-card[data-name="allosaurus"] {
   background-image: url('allosaurus.png');
 }
-
 .species-card[data-name="ceratosaurus"] {
   background-image: url('ceratosaurus.png');
-}
-
-.species-card[data-name="stegosaurus"] {
-  background-image: url('stegosaurus.png');
 }
 
 .species-card[data-name="ankylosaurus"] {
   background-image: url('ankylosaurus.png');
 }
 
+.species-card[data-name="stegosaurus"] {
+  background-image: url('stegosaurus.png');
+}
 .species-card[data-name="deinonychus"] {
   background-image: url('deinonychus.png');
 }
-
 .species-card[data-name="sarcosuchus"] {
   background-image: url('sarcosuchus.png');
-}
-
-.species-card[data-name="quetzalcoatlus"] {
-  background-image: url('quetzalcoatlus.png');
 }
 
 .species-card[data-name="pterodactyl"] {
   background-image: url('pterodactyl.png');
 }
 
-.species-card[data-name="spinosaurus"] {
-  background-image: url('spinosaurus.png');
+.species-card[data-name="quetzalcoatlus"] {
+  background-image: url('quetzalcoatlus.png');
 }
 
-.species-card[data-name="giganotosaurus"] {
-  background-image: url('giganotosaurus.png');
-}
-
-.species-card[data-name="titanosaurus"] {
-  background-image: url('titanosaurus.png');
-}
-
-.species-card[data-name="therizinosaurus"] {
-  background-image: url('therizinosaurus.png');
-}
 input#search{width:100%;padding:.5rem;margin:.5rem 0;border-radius:8px;border:1px solid #cfe6cf}
 footer.site-footer{text-align:center;padding:1rem;color:white}
 @media(min-width:700px){.site-header h1{font-size:1.5rem}}
 button#check{padding:.6rem 1rem;border-radius:8px;border:none;background:#2f7b47;color:white;cursor:pointer}
 button#check:hover{opacity:.95}
 a:focus,button:focus,input:focus{outline:3px solid rgba(47,123,71,.2);outline-offset:2px}
+
 
