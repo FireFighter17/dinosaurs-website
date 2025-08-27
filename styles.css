@@ -162,7 +162,99 @@ body {
 
 .species-card[data-name="quetzalcoatlus"] {
   background-image: url('quetzalcoatlus.png');
+  
+}.species-card[data-name="spinosaurus"] {
+  background-image: url('spinosaurus.png');
 }
+.species-card[data-name="giganotosaurus"] {
+  background-image: url('giganotosaurus.png');
+}
+
+.species-card[data-name="titanosaurus"] {
+  background-image: url('titanosaurus.png');
+}
+
+.species-card[data-name="therizinosaurus"] {
+  background-image: url('therizinosaurus.png');
+}
+.species-card[data-name="concavenator"] {
+  background-image: url('concavenator.png');
+}
+.species-card[data-name="amargasaurus"] {
+  background-image: url('amargasaurus.png');
+}
+
+.species-card[data-name="diplodocus"] {
+  background-image: url('diplodocus.png');
+}
+
+.species-card[data-name="ceolophysis"] {
+  background-image: url('ceolophysis.png');
+}
+.species-card[data-name="protoceratops"] {
+  background-image: url('protoceratops.png');
+}
+.species-card[data-name="proceratosaurus"] {
+  background-image: url('proceratosaurus.png');
+}
+
+.species-card[data-name="plateosaurus"] {
+  background-image: url('plateosaurus.png');
+}
+
+.species-card[data-name="dilophosaurus"] {
+  background-image: url('dilophosaurus.png');
+}
+.species-card[data-name="gigantoraptor"] {
+  background-image: url('gigantoraptor.png');
+}
+.species-card[data-name="carcharodontosaurus"] {
+  background-image: url('carcharodontosaurus.png');
+}
+.species-card[data-name="iguanodon"] {
+  background-image: url('iguanodon.png');
+}
+.species-card[data-name="ornithomimus"] {
+  background-image: url('ornithomimus.png');
+}
+
+
+.dino-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.dino-table thead {
+  background: #2f7b47;   /* green header */
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.dino-table th, 
+.dino-table td {
+  padding: 12px 15px;
+  text-align: center;
+}
+
+.dino-table tbody tr:nth-child(even) {
+  background: #f5fdf7;   /* light green shade for even rows */
+}
+
+.dino-table tbody tr:nth-child(odd) {
+  background: #ffffff;   /* white for odd rows */
+}
+
+.dino-table tbody tr:hover {
+  background: #e6f7ec;   /* hover effect */
+}
+
+
 
 input#search{width:100%;padding:.5rem;margin:.5rem 0;border-radius:8px;border:1px solid #cfe6cf}
 footer.site-footer{text-align:center;padding:1rem;color:white}
