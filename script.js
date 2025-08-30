@@ -1,5 +1,35 @@
 
 // script.js - search + quiz
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyBuqxxQT6lWDvYeUX0Tf9Rh01I_UtxJfwk",
+  authDomain: "dinosaurs-website.firebaseapp.com",
+  projectId: "dinosaurs-website",
+  storageBucket: "dinosaurs-website.firebasestorage.app",
+  messagingSenderId: "887783744239",
+  appId: "1:887783744239:web:455362f876f3b94b81311a",
+  measurementId: "G-XFH359N6NM"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+signInWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    alert("✅ Welcome back " + userCredential.user.email);
+  })
+  .catch((error) => {
+    console.error(error.code, error.message); // Debug info
+    alert("❌ Error: " + error.code);
+  });
+
 document.addEventListener('DOMContentLoaded',function(){
   const search = document.getElementById('search');
   const gallery = document.getElementById('gallery');

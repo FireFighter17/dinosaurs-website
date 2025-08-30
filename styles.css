@@ -1,6 +1,37 @@
 
 /* styles.css - simple responsive styles */
 *{box-sizing:border-box}
+#login {
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+#login input {
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+#login button {
+  width: 100%;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 8px;
+  background: #2f7b47;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+#login button:hover {
+  opacity: 0.9;
+}
+
 body {
     font-family: system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
     line-height: 1.5;

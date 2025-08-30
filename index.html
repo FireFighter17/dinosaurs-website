@@ -7,6 +7,62 @@
   <title>Dinosaurs — Explore Prehistoric Giants</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+<section id="login" class="card">
+  <h2>Login / Signup</h2>
+  <input type="email" id="email" placeholder="Email" required><br><br>
+  <input type="password" id="password" placeholder="Password" required><br><br>
+  <button onclick="signup()">Signup</button>
+  <button onclick="login()">Login</button>
+</section>
+
+<!-- Firebase SDK -->
+<script type="module">
+  // Import Firebase from Google CDN
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
+  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } 
+    from "https://www.gstatic.com/firebasejs/10.12.3/firebase-auth.js";
+
+  // Your Firebase config (get this from your Firebase console)
+  const firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_PROJECT.firebaseapp.com",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_PROJECT.appspot.com",
+    messagingSenderId: "YOUR_SENDER_ID",
+    appId: "YOUR_APP_ID"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+
+  // Signup function
+  window.signup = function() {
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        alert("✅ Account created for " + userCredential.user.email);
+      })
+      .catch((error) => {
+        alert("❌ " + error.message);
+      });
+  }
+
+  // Login function
+  window.login = function() {
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        alert("✅ Welcome back " + userCredential.user.email);
+      })
+      .catch((error) => {
+        alert("❌ " + error.message);
+      });
+  }
+</script>
+
 <body>
   <header class="site-header">
     <div class="container">
@@ -184,6 +240,10 @@
 		<div class="species-card" data-name="iguanodon">
           <h4>Iguanodon</h4>
           <p>From the early Cretaceous, Iguanodon is a large ornithischian. Iguanodon could probably walk on all fours or on two legs. It had a large thumb spike on the end of its hand, probably to fend-off predators.</p>
+        </div>
+		<div class="species-card" data-name="ornithomimus">
+          <h4>Ornithomimus</h4>
+          <p>Ornithomimus was a swift, bipedal dinosaur which was covered in feathers and equipped with a small toothless beak that may indicate an omnivorous diet. Lived late Cretaceous.</p>
         </div>
 		<div class="species-card" data-name="ornithomimus">
           <h4>Ornithomimus</h4>
